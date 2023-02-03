@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <style src="/style.css"></style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+
+  <script
+    src="https://polyfill.io/v3/polyfill.min.js?features=es2015%2Ces2022%2Ces5%2Cfetch%2CgetComputedStyle%2Ces7"></script>
+  <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/focus-visible@5.2.0/dist/focus-visible.min.js"
+    integrity="sha384-xRa5B8rCDfdg0npZcxAh+RXswrbFk3g6dlHVeABeluN8EIwdyljz/LqJgc2R3KNA" crossorigin="anonymous"
+    defer></script>
+</head>
+
+<body class="bg-blue-100">
+  <div class="static">
+    <!--
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    </nav>-->
+    <div class="container flex lg:flex-row shrink-0 bg-blue-100 p-10 space-x-10 h-screen w-full" id="app-container">
+      <div class="editor glow flex-1 p-3 bg-white/80 rounded-3xl">
+        <amp-selector class="tabs-with-selector" role="tablist"
+          on="select:myTabPanels.toggle(index=event.targetOption, value=true),myPreviewPanels.toggle(index=event.targetOption,value=true)"
+          keyboard-select-mode="focus">
+          <a id="tab1" class="text-slate-500 focus:outline-sky-700 focus:outline" role="tab"
+            aria-controls="example-recipe-container,aaa" option="0">
+            diagram
+          </a>
+          <a id="tab2" class="text-slate-500 focus:outline-sky-700 focus:outline" role="tab" aria-controls="app,p2-tab2"
+            option="1" selected>
+<!--            editor-->
+            Beat
+          </a>
+          <a id="tab3" class="text-slate-500 focus:outline-sky-700 focus:outline" role="tab"
+            aria-controls="tabpanel3,p2-tab3" option="2" >
+<!--            music-->
+            Piano
+          </a>
+          <a id="tab4" class="text-slate-500 focus:outline-sky-700 focus:outline" role="tab"
+            aria-controls="schedule-app,calender" option="3">
+            scheduler
+          </a>
+          <a id="tab5" class="text-slate-500 focus:outline-sky-700" role="tab" aria-controls="todo,todoinfo"
+            option="4">todo</a>
+          <a id="tab6" class="text-slate-500 focus:outline-sky-700" role="tab" aria-controls="checktoggle,nil4ct"
+            option="5">checktoggle</a>
+
+        </amp-selector>
+        <amp-selector id="myTabPanels" class="tabpanels">
+          <div id="example-recipe-container" aria-labelledby="tab1" role="tabpanel" option>
+            <div id="example-recipe"></div>
+          </div>
+          <div id="app" aria-labelledby="tab2" role="tabpanel" role="tabpanel" option selected></div>
+          <div id="tabpanel3" class="chart-wrapper" aria-labelledby="tab3" role="tabpanel" option></div>
+          <div id="schedule-app" aria-labelledby="tab4" role="tabpanel" option></div>
+          <div id="checktoggle" aria-labelledby="tab5" role="tabpanel" option></div>
+        </amp-selector>
+      </div>
+      <amp-selector id="myPreviewPanels" class="tabpanels lg:glow lg:w-1/2 flex-1 bg-white/80 rounded-3xl">
+        <div id="aaa" role="tabpanel" option>aaa</div>
+        <div id="p2-tab2" role="tabpanel" option select>本来MDXをロードする予定</div>
+        <div id="p2-tab3" role="tabpanel" option >aaa</div>
+        <div id="calender" role="tabpanel" option>カレンダーを読み込み中<progress max="100" class="progress"></progress></div>
+        <div id="todoinfo" role="tabpanel" option></div>
+        <div id="nil4ct" role="tabpanel" option></div>
+      </amp-selector>
+    </div>
+    <!-- <div
+        class="fab-container gra from-green-400 to-pink-700 absolute right-0"
+      >
+        <div class="fab">+</div>
+      </div>
+    </div> -->
+    <script type="module" src="./main.jsx"></script>
+</body>
+
+</html>
